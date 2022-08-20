@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import { Lable, Input } from './Form.styled';
+import { Lable, Input, Forma } from './Form.styled';
+import { Button } from '../ContactList/ContactsList.styled';
 
 export class Form extends Component {
   state = {
@@ -29,8 +30,8 @@ export class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <Lable htmlFor="">
+      <Forma onSubmit={this.handleSubmit}>
+        <Lable>
           Name
           <Input
             value={this.state.name}
@@ -45,18 +46,18 @@ export class Form extends Component {
           />
         </Lable>
 
-        <Lable htmlFor="">
+        <Lable>
           Number
           <Input
             type="tel"
             name="number"
             value={this.state.number}
             onChange={this.handleValueInputChange}
-            placeholder="+38(0__)_______"
+            placeholder="___-__-__"
           />
         </Lable>
-        <button type="submit">Add contact</button>
-      </form>
+        <Button type="submit">Add contact</Button>
+      </Forma>
     );
   }
 }
