@@ -4,6 +4,10 @@ import { Lable, Input, Forma } from './Form.styled';
 import { Button } from '../ContactList/ContactsList.styled';
 
 export class Form extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -62,7 +66,3 @@ export class Form extends Component {
     );
   }
 }
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
